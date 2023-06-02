@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script changes the IP address
 
 # Update /etc/hosts file to change the IP address associated with localhost
 sudo sed -i "s/127.0.0.1/127.0.0.2/g" ~/etc/hosts
