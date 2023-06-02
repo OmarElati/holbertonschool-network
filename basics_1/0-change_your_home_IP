@@ -6,9 +6,10 @@ sudo cp /etc/hosts ~/hosts.new
 
 # Modify the backup copy to change the IP address associated with localhost
 sudo sed -i 's/^127.0.0.1.*/127.0.0.2 localhost/g' ~/hosts.new
+sudo sed -i '/^::1/ s/.*/#::1/' ~/hosts.new
 
 # Add a new entry for facebook.com with the desired IP address
-echo "8.8.8.8 facebook.com" >> ~/hosts.new
+echo "8.8.8.8 facebook.com" | sudo tee -a ~/hosts.new > /dev/null
 
 # Replace the original /etc/hosts file with the modified version
 sudo cp -f ~/hosts.new /etc/hosts
