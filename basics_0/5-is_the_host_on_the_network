@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Check if other network devices are available on the network
 if [ $# -ne 1 ]
 then
