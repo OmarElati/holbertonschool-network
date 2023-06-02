@@ -1,1 +1,7 @@
-2
+#!/usr/bin/env bash
+
+# Update /etc/hosts file to change the IP address associated with localhost
+sudo sed -i "s/127.0.0.1/127.0.0.2/g" ~/etc/hosts
+
+# Update /etc/hosts file to change the IP address associated with facebook.com
+sudo sed -i "s/157.240.11.35/8.8.8.8/g" ~/etc/hosts
