@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 # Check if other network devices are available on the network
-if [ $# -eq 0 ];
+if [ $# -ne 1 ]
 then
-    echo "Usage: $0 {IP_ADDRESS}"
-    exit 1
+    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+else
+    ip_address=$1
+    ping -c 5 "$ip_address"
 fi
-ip_address=$1
-ping -c 5 $ip_address
